@@ -5,15 +5,14 @@
  */
 package model;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+
+import java.sql.*;
 
 /**
  *
  * @author ASUS
  */
-public class connect {
+public class connection {
     private static Connection MySQLConfig;
     public static Connection config() throws SQLException {
         try{
