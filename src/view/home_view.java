@@ -138,32 +138,32 @@ public class home_view extends javax.swing.JFrame {
     
     //tombol barang
     private void buttonBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBarangActionPerformed
-        new barang_view().setVisible(true);
-        dispose();
+//        new barang_view().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_buttonBarangActionPerformed
 
     //tombol customer
     private void buttonCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCustomerActionPerformed
-        new customer_view().setVisible(true);
-        dispose();
+//        new customer_view().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_buttonCustomerActionPerformed
 
     //tombol supplier
     private void buttonSupplierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSupplierActionPerformed
-        new supplier_view().setVisible(true);
-        dispose();
+//        new supplier_view().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_buttonSupplierActionPerformed
 
     //tombol jual
     private void buttonJualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonJualActionPerformed
-        new jual_view().setVisible(true);
-        dispose();
+//        new jual_view().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_buttonJualActionPerformed
 
     //tombol beli
     private void buttonBeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBeliActionPerformed
-        new beli_view().setVisible(true);
-        dispose();
+//        new beli_view().setVisible(true);
+//        dispose();
     }//GEN-LAST:event_buttonBeliActionPerformed
 
     
@@ -204,11 +204,11 @@ public class home_view extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonBarang;
-    private javax.swing.JButton buttonBeli;
-    private javax.swing.JButton buttonCustomer;
-    private javax.swing.JButton buttonJual;
-    private javax.swing.JButton buttonSupplier;
+    public javax.swing.JButton buttonBarang;
+    public javax.swing.JButton buttonBeli;
+    public javax.swing.JButton buttonCustomer;
+    public javax.swing.JButton buttonJual;
+    public javax.swing.JButton buttonSupplier;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables

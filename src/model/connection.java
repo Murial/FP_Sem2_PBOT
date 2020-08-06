@@ -13,8 +13,9 @@ import java.sql.*;
  * @author ASUS
  */
 public class connection {
-    private static Connection MySQLConfig;
-    public static Connection config() throws SQLException {
+    private static java.sql.Connection MySQLConfig;
+    
+    public static java.sql.Connection configDB() throws SQLException {
         try{
             String url = "jdbc:mysql://localhost/grosir";
             String user = "root";
@@ -26,5 +27,10 @@ public class connection {
             System.out.println("Koneksi gagal"+ e.getMessage());
         }
         return MySQLConfig;
+    }
+
+    PreparedStatement prepareStatement(String sql) {
+        return null;
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

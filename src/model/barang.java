@@ -10,17 +10,17 @@ import java.sql.*;
 import javax.swing.*;
 
 public class barang extends connection{
-    private int idBarang;
+    private String idBarang;
     private String namaBarang;
     private String satuanBarang;
-    private int hargaBarang;
-    private int stokBarang;
+    private String hargaBarang;
+    private String stokBarang;
    
-   public int getId(){
+   public String getId(){
        return idBarang;
    }
    
-   public void setId(int idBarang){
+   public void setId(String idBarang){
        this.idBarang = idBarang;
    }
    
@@ -40,20 +40,80 @@ public class barang extends connection{
        this.satuanBarang = satuanBarang;
    }
    
-   public int getHB(){
+   public String getHB(){
        return idBarang;
    }
    
-   public void setHB(int hargaBarang){
+   public void setHB(String hargaBarang){
        this.hargaBarang = hargaBarang;
    }
    
-   public int getStokB(){
+   public String getStokB(){
        return stokBarang;
    }
    
-   public void setStokB(int stokBarang){
+   public void setStokB(String stokBarang){
        this.stokBarang = stokBarang;
+   }
+   
+   public boolean simpanBarang(barang barang) throws SQLException{
+       PreparedStatement pstm = null;
+       connection conn = (connection)connection.configDB();
+       
+       String sql = "INSERT INTO barang (namaBarang, satuanBarang, hargaBarang, stokBarang)"
+               + "VALUES (?,?,?,?)";
+       
+       try{
+           pstm = conn.prepareStatement(sql);
+           pstm.setString( 1, barang.getNB());
+           pstm.setString( 2, barang.getSatB());
+           pstm.setString( 3, barang.getHB());
+           pstm.setString( 4, barang.getStokB());
+           pstm.execute();
+           return true;
+       } catch(HeadlessException | SQLException e){
+           System.out.println(e);
+           return false;
+       }
+   }
+   
+   public boolean updateBarang(barang barang) throws SQLException{
+       PreparedStatement pstm = null;
+       connection conn = (connection)connection.configDB();
+       
+       String sql = "UPDATE barang SET idBarang = ?, namaBarang = ?, satuanBarang = ?, hargaBarang = ?, stokBarang = ?"
+               + "WHERE idBarang = ?";
+       
+       try{
+           pstm = conn.prepareStatement(sql);
+           pstm.setString( 1, barang.getId());
+           pstm.setString( 2, barang.getNB());
+           pstm.setString( 3, barang.getSatB());
+           pstm.setString( 4, barang.getHB());
+           pstm.setString( 5, barang.getStokB());
+           pstm.execute();
+           return true;
+       } catch(HeadlessException | SQLException e){
+           System.out.println(e);
+           return false;
+       }
+   }
+   
+   public boolean hapusBarang(barang barang) throws SQLException{
+       PreparedStatement pstm = null;
+       connection conn = (connection)connection.configDB();
+       
+       String sql = "DELETE FROM barang WHERE idBarang = ?";
+       
+       try{
+           pstm = conn.prepareStatement(sql);
+           pstm.setString( 1, barang.getId());
+           pstm.execute();
+           return true;
+       } catch(HeadlessException | SQLException e){
+           System.out.println(e);
+           return false;
+       }
    }
    
    

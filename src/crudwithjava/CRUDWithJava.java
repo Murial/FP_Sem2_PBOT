@@ -6,19 +6,26 @@
 package crudwithjava;
 
 import controller.barangControl;
+import controller.homeControl;
 import model.barang;
+import view.home_view;
 import view.barang_view;
 
 public class CRUDWithJava {
     
     public static void main(String[] args) {
-        barang data = new barang();
-        barang_view frm = new barang_view();
-        barangControl ctrl = new barangControl(data, frm);
+        home_view frm_home = new home_view();
+        homeControl ctrl_home = new homeControl(frm_home);
         
-        ctrl.kosongkanForm();
-        ctrl.TampilData();
-        frm.setVisible(true);
+//        barang data_barang = new barang();
+//        barang_view frm_barang = new barang_view();
+//        barangControl ctrl_barang = new barangControl(data_barang, frm_barang);
+        
+        frm_home.setVisible(true);
+        
+//        ctrl_barang.kosongkanForm();
+//        ctrl_barang.TampilDataBarang();
+//        frm_barang.setVisible(true);
         
         
     }

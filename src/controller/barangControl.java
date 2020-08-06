@@ -8,6 +8,7 @@ package controller;
 import model.barang;
 import model.connection; 
 import view.barang_view;
+import javax.swing.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -30,10 +31,10 @@ public class barangControl implements ActionListener, MouseListener{
         this.barang_view.edit.addActionListener(this);
         this.barang_view.hapus.addActionListener(this);
         this.barang_view.reset.addActionListener(this);
-//        this.barang_view.tabelBarang.addMouseListener(this);
+        this.barang_view.tabelBarang.addMouseListener(this);
     }
     
-    public void TampilData(){
+    public void TampilDataBarang(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("ID BARANG");
         model.addColumn("NAMA BARANG");
@@ -43,17 +44,17 @@ public class barangControl implements ActionListener, MouseListener{
         
         try{
             String sql = "SELECT * FROM barang";
-            java.sql.Connection con = connection.config();
+            java.sql.Connection con = connection.configDB();
             java.sql.Statement stm = con.createStatement();
             java.sql.ResultSet res=  stm.executeQuery(sql);
             
             while(res.next()){
                 model.addRow(new Object[]{
-                    res.getInt(1),
+                    res.getString(1),
                     res.getString(2),
                     res.getString(3),
-                    res.getInt(4),
-                    res.getInt(5)
+                    res.getString(4),
+                    res.getString(5)
                 });
             }
             barang_view.tabelBarang.setModel(model);
@@ -70,14 +71,91 @@ public class barangControl implements ActionListener, MouseListener{
         barang_view.input_stok.setText(null);
     }
 
+    
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        if (e.getSource() == barang_view.tambah) {
+            kosongkanForm();
+            barang_view.input_idbarang.setEditable(true);
+        } 
+        
+        else if(e.getSource() == barang_view.simpan){
+            barang.setId(barang_view.input_idbarang.getText());
+            barang.setNB(barang_view.input_namabarang.getText());
+            barang.setSatB(barang_view.input_satuan.getText());
+            barang.setHB(barang_view.input_harga.getText());
+            barang.setStokB(barang_view.input_stok.getText());
+            
+            try {
+                if (barang.simpanBarang(barang)) {
+                    JOptionPane.showMessageDialog(null, "Simpan data baru berhasil");
+                    kosongkanForm();
+                    TampilDataBarang();
+                }
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null, ex);
+            }
+        } 
+        
+        else if(e.getSource() == barang_view.edit){
+            barang.setId(barang_view.input_idbarang.getText());
+            barang.setNB(barang_view.input_namabarang.getText());
+            barang.setSatB(barang_view.input_satuan.getText());
+            barang.setHB(barang_view.input_harga.getText());
+            barang.setStokB(barang_view.input_stok.getText());
+            
+            try {
+                if (barang.updateBarang(barang)) {
+                    JOptionPane.showMessageDialog(null, "Update data baru berhasil");
+                    kosongkanForm();
+                    TampilDataBarang();
+                }
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null, ex);
+            }
+        }
+        
+        else {
+            barang.setId(barang_view.input_idbarang.getText());
+            
+            try {
+                if (barang.hapusBarang(barang)) {
+                    JOptionPane.showMessageDialog(null, "Hapus data berhasil");
+                    kosongkanForm();
+                    TampilDataBarang();
+                }
+            }
+            catch(SQLException ex){
+                JOptionPane.showMessageDialog(null, ex);
+            }
+        }
+    } 
 
     @Override
-    public void mouseClicked(MouseEvent e) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void mouseClicked(MouseEvent me) {
+        if (me.getSource() == barang_view.tabelBarang) {
+            barang_view.input_idbarang.setEditable(false);
+            
+            int baris = barang_view.tabelBarang.rowAtPoint(me.getPoint());
+            
+            String idBarang = barang_view.tabelBarang.getValueAt(baris, 0).toString();
+            barang_view.input_idbarang.setText(idBarang);
+            
+            String namaBarang = barang_view.tabelBarang.getValueAt(baris, 1).toString();
+            barang_view.input_namabarang.setText(namaBarang);
+            
+            String satuanBarang = barang_view.tabelBarang.getValueAt(baris, 2).toString();
+            barang_view.input_satuan.setText(satuanBarang);
+            
+            String hargaBarang = barang_view.tabelBarang.getValueAt(baris, 3).toString();
+            barang_view.input_harga.setText(hargaBarang);
+            
+            String stokBarang = barang_view.tabelBarang.getValueAt(baris, 4).toString();
+            barang_view.input_stok.setText(stokBarang);
+        }
     }
 
     @Override
