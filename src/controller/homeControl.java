@@ -28,7 +28,6 @@ public class homeControl implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == frm.buttonBarang) {
-            home_view frm_home = new home_view();
             barang data_barang = new barang();
             barang_view frm_barang = new barang_view();
             barangControl ctrl_barang = new barangControl(data_barang, frm_barang);
@@ -36,7 +35,7 @@ public class homeControl implements ActionListener{
             ctrl_barang.kosongkanForm();
             ctrl_barang.TampilDataBarang();
             frm_barang.setVisible(true);
-            frm_home.dispose();
+            frm.dispose();
         }
         
         

@@ -5,19 +5,25 @@
  */
 package view;
 
+import java.awt.Color;
+
 /**
  *
  * @author ASUS
  */
 public class home_view extends javax.swing.JFrame {
 
-    /**
-     * Creates new form home
-     */
+    
+    
     public home_view() {
         initComponents();
+        myInitComponents();
     }
 
+    public void myInitComponents(){
+        welcome.setForeground(Color.white);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,6 +40,7 @@ public class home_view extends javax.swing.JFrame {
         buttonSupplier = new javax.swing.JButton();
         buttonJual = new javax.swing.JButton();
         buttonBeli = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -47,90 +54,68 @@ public class home_view extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(920, 550));
+        setPreferredSize(new java.awt.Dimension(920, 550));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        welcome.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        welcome.setBackground(new java.awt.Color(255, 255, 255));
+        welcome.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         welcome.setText("APLIKASI GROSIR");
+        getContentPane().add(welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, -1, -1));
 
         buttonBarang.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         buttonBarang.setText("BARANG");
+        buttonBarang.setBorderPainted(false);
         buttonBarang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBarangActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 240, 115, 44));
 
         buttonCustomer.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         buttonCustomer.setText("CUSTOMER");
+        buttonCustomer.setBorderPainted(false);
+        buttonCustomer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         buttonCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCustomerActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 116, 44));
 
         buttonSupplier.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         buttonSupplier.setText("SUPPLIER");
+        buttonSupplier.setBorderPainted(false);
         buttonSupplier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonSupplierActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 115, 44));
 
         buttonJual.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         buttonJual.setText("JUAL");
+        buttonJual.setBorderPainted(false);
         buttonJual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonJualActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonJual, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 115, 44));
 
         buttonBeli.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         buttonBeli.setText("BELI");
+        buttonBeli.setBorderPainted(false);
         buttonBeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonBeliActionPerformed(evt);
             }
         });
+        getContentPane().add(buttonBeli, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 310, 115, 44));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(252, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(buttonBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonJual, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buttonCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(buttonSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(250, 250, 250))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(282, 282, 282)
-                .addComponent(welcome)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(welcome)
-                .addGap(146, 146, 146)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buttonBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buttonJual, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(188, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\store 50.jpg")); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,7 +179,7 @@ public class home_view extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -210,6 +195,7 @@ public class home_view extends javax.swing.JFrame {
     public javax.swing.JButton buttonJual;
     public javax.swing.JButton buttonSupplier;
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel welcome;
+    private javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }

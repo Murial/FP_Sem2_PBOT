@@ -129,6 +129,7 @@ public class barangControl implements ActionListener, MouseListener{
             home_view home_frm = new home_view();
             homeControl home_ctrl = new homeControl(home_frm);
             home_frm.setVisible(true);
+            barang_view.dispose();
         }
         
         else {
