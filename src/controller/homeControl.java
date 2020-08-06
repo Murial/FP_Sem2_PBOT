@@ -48,6 +48,16 @@ public class homeControl implements ActionListener{
             frm.dispose();
         }
         
+        else if(e.getSource() == frm.buttonSupplier){
+            supplier data_supplier = new supplier();
+            supplier_view frm_supplier = new supplier_view();
+            supplierControl ctrl_supplier = new supplierControl(data_supplier, frm_supplier);
+            
+            ctrl_supplier.kosongkanForm();
+            ctrl_supplier.TampilDataSupplier();
+            frm_supplier.setVisible(true);
+            frm.dispose();
+        }
         
     }
     

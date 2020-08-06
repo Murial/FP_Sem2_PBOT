@@ -5,11 +5,8 @@
  */
 package crudwithjava;
 
-import controller.barangControl;
-import controller.homeControl;
-import model.barang;
-import view.home_view;
-import view.barang_view;
+import controller.*;
+import view.*;
 
 public class CRUDWithJava {
     
