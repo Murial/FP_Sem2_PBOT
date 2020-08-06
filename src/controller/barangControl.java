@@ -6,7 +6,7 @@
 package controller;
 
 import model.barang;
-import model.connection; 
+import model.Connector; 
 import view.barang_view;
 import javax.swing.*;
 
@@ -18,6 +18,7 @@ import java.sql.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import view.home_view;
 
 public class barangControl implements ActionListener, MouseListener{
     private barang barang;
@@ -31,6 +32,7 @@ public class barangControl implements ActionListener, MouseListener{
         this.barang_view.edit.addActionListener(this);
         this.barang_view.hapus.addActionListener(this);
         this.barang_view.reset.addActionListener(this);
+        this.barang_view.kembali.addActionListener(this);
         this.barang_view.tabelBarang.addMouseListener(this);
     }
     
@@ -44,8 +46,8 @@ public class barangControl implements ActionListener, MouseListener{
         
         try{
             String sql = "SELECT * FROM barang";
-            java.sql.Connection con = connection.configDB();
-            java.sql.Statement stm = con.createStatement();
+            java.sql.Connection conn = (Connection)Connector.configDB();
+            java.sql.Statement stm = conn.createStatement();
             java.sql.ResultSet res=  stm.executeQuery(sql);
             
             while(res.next()){
@@ -76,6 +78,11 @@ public class barangControl implements ActionListener, MouseListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == barang_view.tambah) {
+            kosongkanForm();
+            barang_view.input_idbarang.setEditable(true);
+        } 
+        
+        else if (e.getSource() == barang_view.reset) {
             kosongkanForm();
             barang_view.input_idbarang.setEditable(true);
         } 
@@ -116,6 +123,12 @@ public class barangControl implements ActionListener, MouseListener{
             catch(SQLException ex){
                 JOptionPane.showMessageDialog(null, ex);
             }
+        }
+        
+        else if(e.getSource() == barang_view.kembali){
+            home_view home_frm = new home_view();
+            homeControl home_ctrl = new homeControl(home_frm);
+            home_frm.setVisible(true);
         }
         
         else {
