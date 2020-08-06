@@ -18,6 +18,7 @@ public class jual_view extends javax.swing.JFrame {
      */
     public jual_view() {
         initComponents();
+        myInitComponents();
     }
     
     public void myInitComponents(){
@@ -44,20 +45,20 @@ public class jual_view extends javax.swing.JFrame {
         input_jumlahjual = new javax.swing.JTextField();
         input_tanggaljual = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        input_idscustomer = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        input_idcustomer = new javax.swing.JTextField();
+        tambah = new javax.swing.JButton();
+        simpan = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
         input_idjual = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        kembali = new javax.swing.JButton();
         input_idbarang = new javax.swing.JTextField();
-        jButton5 = new javax.swing.JButton();
+        reset = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        hapus = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table_jual = new javax.swing.JTable();
+        tabelJual = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         welcome = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -74,94 +75,78 @@ public class jual_view extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setText("TANGGAL JUAL");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(12, 260, 80, 15);
-        getContentPane().add(input_jumlahjual);
-        input_jumlahjual.setBounds(110, 295, 253, 19);
-        getContentPane().add(input_tanggaljual);
-        input_tanggaljual.setBounds(110, 258, 253, 19);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 260, -1, -1));
+        getContentPane().add(input_jumlahjual, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 295, 253, -1));
+        getContentPane().add(input_tanggaljual, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 258, 253, -1));
 
         jLabel6.setText("JUMLAH");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(12, 297, 41, 15);
-        getContentPane().add(input_idscustomer);
-        input_idscustomer.setBounds(110, 221, 253, 19);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 297, -1, -1));
+        getContentPane().add(input_idcustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 221, 253, -1));
 
-        jButton1.setText("TAMBAH");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        tambah.setText("TAMBAH");
+        tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                tambahActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(110, 346, 78, 25);
+        getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 346, -1, -1));
 
-        jButton2.setText("SIMPAN");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        simpan.setText("SIMPAN");
+        simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                simpanActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(199, 346, 72, 25);
+        getContentPane().add(simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 346, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("- TABEL JUAL -");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(395, 83, 101, 19);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 83, -1, -1));
 
-        jButton3.setText("EDIT");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        edit.setText("EDIT");
+        edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                editActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(285, 346, 78, 25);
-        getContentPane().add(input_idjual);
-        input_idjual.setBounds(110, 147, 253, 19);
+        getContentPane().add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 346, 78, -1));
+        getContentPane().add(input_idjual, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 147, 253, -1));
 
-        jButton6.setText("KEMBALI");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        kembali.setText("KEMBALI");
+        kembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                kembaliActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6);
-        jButton6.setBounds(285, 382, 78, 25);
-        getContentPane().add(input_idbarang);
-        input_idbarang.setBounds(110, 184, 253, 19);
+        getContentPane().add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(285, 382, -1, -1));
+        getContentPane().add(input_idbarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 184, 253, -1));
 
-        jButton5.setText("RESET");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        reset.setText("RESET");
+        reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                resetActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(199, 382, 72, 25);
+        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(199, 382, 72, -1));
 
         jLabel3.setText("ID BARANG");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(12, 186, 57, 15);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 186, -1, -1));
 
-        jButton4.setText("HAPUS");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        hapus.setText("HAPUS");
+        hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                hapusActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(110, 382, 78, 25);
+        getContentPane().add(hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 382, 78, -1));
 
         jLabel2.setText("ID JUAL");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(12, 149, 38, 15);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 149, -1, -1));
 
-        table_jual.setModel(new javax.swing.table.DefaultTableModel(
+        tabelJual.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -172,51 +157,56 @@ public class jual_view extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "null"
             }
         ));
-        jScrollPane1.setViewportView(table_jual);
+        tabelJual.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelJualMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabelJual);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(395, 147, 471, 390);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(395, 147, 471, 390));
 
         jLabel4.setText("ID CUSTOMER");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(12, 223, 68, 15);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 223, -1, -1));
 
         welcome.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         welcome.setText("APLIKASI GROSIR");
-        getContentPane().add(welcome);
-        welcome.setBounds(279, 30, 315, 47);
+        getContentPane().add(welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 30, -1, -1));
 
         jLabel7.setIcon(new javax.swing.ImageIcon("D:\\store 50.jpg")); // NOI18N
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 0, 920, 550);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_tambahActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_simpanActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_editActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         new home_view().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_kembaliActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_resetActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_hapusActionPerformed
+
+    private void tabelJualMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelJualMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabelJualMouseClicked
 
     /**
      * @param args the command line arguments
@@ -285,17 +275,13 @@ public class jual_view extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField input_idbarang;
-    private javax.swing.JTextField input_idjual;
-    private javax.swing.JTextField input_idscustomer;
-    private javax.swing.JTextField input_jumlahjual;
-    private javax.swing.JTextField input_tanggaljual;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    public javax.swing.JButton edit;
+    public javax.swing.JButton hapus;
+    public javax.swing.JTextField input_idbarang;
+    public javax.swing.JTextField input_idcustomer;
+    public javax.swing.JTextField input_idjual;
+    public javax.swing.JTextField input_jumlahjual;
+    public javax.swing.JTextField input_tanggaljual;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -305,7 +291,11 @@ public class jual_view extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable table_jual;
+    public javax.swing.JButton kembali;
+    public javax.swing.JButton reset;
+    public javax.swing.JButton simpan;
+    public javax.swing.JTable tabelJual;
+    public javax.swing.JButton tambah;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }

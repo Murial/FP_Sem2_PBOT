@@ -70,6 +70,17 @@ public class homeControl implements ActionListener{
             frm.dispose();
         }
         
+        else if (e.getSource() == frm.buttonJual) {
+            jual data_jual = new jual();
+            jual_view frm_jual = new jual_view();
+            jualControl ctrl_jual = new jualControl(data_jual, frm_jual);
+            
+            ctrl_jual.kosongkanForm();
+            ctrl_jual.TampilDataJual();
+            frm_jual.setVisible(true);
+            frm.dispose();
+        }
+        
     }
     
     

@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 import view.home_view;
 
 public class beliControl implements ActionListener, MouseListener{
-    
+
     private beli beli;
     private beli_view beli_view;
 
@@ -36,7 +36,7 @@ public class beliControl implements ActionListener, MouseListener{
         this.beli_view.kembali.addActionListener(this);
         this.beli_view.tabelBeli.addMouseListener(this);
     }
-    
+
     public void TampilDataBeli(){
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("ID BELI");
@@ -44,13 +44,13 @@ public class beliControl implements ActionListener, MouseListener{
         model.addColumn("ID SUPPLIER");
         model.addColumn("TANGGAL BELI");
         model.addColumn("JUMLAH");
-        
+
         try{
             String sql = "SELECT * FROM beli";
             java.sql.Connection conn = (Connection)Connector.configDB();
             java.sql.Statement stm = conn.createStatement();
             java.sql.ResultSet res =  stm.executeQuery(sql);
-            
+
             while(res.next()){
                 model.addRow(new Object[]{
                     res.getString(1),
@@ -65,7 +65,7 @@ public class beliControl implements ActionListener, MouseListener{
             System.out.println("Error "+e.getMessage());
         }
     }
-    
+
     public void kosongkanForm(){
         beli_view.input_idbeli.setText(null);
         beli_view.input_idbarang.setText(null);
@@ -74,27 +74,27 @@ public class beliControl implements ActionListener, MouseListener{
         beli_view.input_jumlahbeli.setText(null);
     }
 
-    
-    
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == beli_view.tambah) {
             kosongkanForm();
             beli_view.input_idbeli.setEditable(true);
         } 
-        
+
         else if (e.getSource() == beli_view.reset) {
             kosongkanForm();
             beli_view.input_idbeli.setEditable(true);
         } 
-        
+
         else if(e.getSource() == beli_view.simpan){
             beli.setIdBeli(beli_view.input_idbeli.getText());
             beli.setIdBarang(beli_view.input_idbarang.getText());
             beli.setIdSupplier(beli_view.input_idsupplier.getText());
             beli.setTanggalBeli(beli_view.input_tanggalbeli.getText());
             beli.setJumlahBeli(beli_view.input_jumlahbeli.getText());
-            
+
             try {
                 if (beli.simpanBeli(beli)) {
                     JOptionPane.showMessageDialog(null, "Simpan data baru berhasil");
@@ -106,14 +106,14 @@ public class beliControl implements ActionListener, MouseListener{
                 JOptionPane.showMessageDialog(null, ex);
             }
         } 
-        
+
         else if(e.getSource() == beli_view.edit){
             beli.setIdBeli(beli_view.input_idbeli.getText());
             beli.setIdBarang(beli_view.input_idbarang.getText());
             beli.setIdSupplier(beli_view.input_idsupplier.getText());
             beli.setTanggalBeli(beli_view.input_tanggalbeli.getText());
             beli.setJumlahBeli(beli_view.input_jumlahbeli.getText());
-            
+
             try {
                 if (beli.updateBeli(beli)) {
                     JOptionPane.showMessageDialog(null, "Update data baru berhasil");
@@ -125,17 +125,17 @@ public class beliControl implements ActionListener, MouseListener{
                 JOptionPane.showMessageDialog(null, ex);
             }
         }
-        
+
         else if(e.getSource() == beli_view.kembali){
             home_view home_frm = new home_view();
             homeControl home_ctrl = new homeControl(home_frm);
             home_frm.setVisible(true);
             beli_view.dispose();
         }
-        
+
         else {
             beli.setIdBarang(beli_view.input_idbeli.getText());
-            
+
             try {
                 if (beli.hapusBeli(beli)) {
                     JOptionPane.showMessageDialog(null, "Hapus data berhasil");
@@ -153,21 +153,21 @@ public class beliControl implements ActionListener, MouseListener{
     public void mouseClicked(MouseEvent me) {
         if (me.getSource() == beli_view.tabelBeli) {
             beli_view.input_idbeli.setEditable(false);
-            
+
             int baris = beli_view.tabelBeli.rowAtPoint(me.getPoint());
-            
+
             String idBeli = beli_view.tabelBeli.getValueAt(baris, 0).toString();
             beli_view.input_idbeli.setText(idBeli);
-            
+
             String idBarang = beli_view.tabelBeli.getValueAt(baris, 1).toString();
             beli_view.input_idbarang.setText(idBarang);
-            
+
             String idSupplier = beli_view.tabelBeli.getValueAt(baris, 2).toString();
             beli_view.input_idsupplier.setText(idSupplier);
-            
+
             String tanggalBeli = beli_view.tabelBeli.getValueAt(baris, 3).toString();
             beli_view.input_tanggalbeli.setText(tanggalBeli);
-            
+
             String jumlahBeli = beli_view.tabelBeli.getValueAt(baris, 4).toString();
             beli_view.input_jumlahbeli.setText(jumlahBeli);
         }
@@ -175,22 +175,22 @@ public class beliControl implements ActionListener, MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }
