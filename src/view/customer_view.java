@@ -18,6 +18,7 @@ public class customer_view extends javax.swing.JFrame {
      */
     public customer_view() {
         initComponents();
+        myInitComponents();
     }
     
         public void myInitComponents(){
@@ -42,21 +43,21 @@ public class customer_view extends javax.swing.JFrame {
         welcome = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table_customer = new javax.swing.JTable();
+        tabelCustomer = new javax.swing.JTable();
         input_idcustomer = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         input_namacustomer = new javax.swing.JTextField();
-        input_salamatcustomer = new javax.swing.JTextField();
+        input_alamatcustomer = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         input_telpcustomer = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        tambah = new javax.swing.JButton();
+        simpan = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
+        kembali = new javax.swing.JButton();
+        reset = new javax.swing.JButton();
+        hapus = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
@@ -71,20 +72,17 @@ public class customer_view extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(920, 550));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         welcome.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         welcome.setText("APLIKASI GROSIR");
-        getContentPane().add(welcome);
-        welcome.setBounds(279, 29, 315, 47);
+        getContentPane().add(welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 29, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("- TABEL CUSTOMER -");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(367, 82, 146, 19);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(367, 82, -1, -1));
 
-        table_customer.setModel(new javax.swing.table.DefaultTableModel(
+        tabelCustomer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -95,126 +93,110 @@ public class customer_view extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(table_customer);
+        jScrollPane1.setViewportView(tabelCustomer);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(409, 146, 453, 390);
-        getContentPane().add(input_idcustomer);
-        input_idcustomer.setBounds(135, 146, 253, 19);
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(409, 146, -1, 390));
+        getContentPane().add(input_idcustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 146, 253, -1));
 
         jLabel2.setText("ID CUSTOMER");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(27, 148, 68, 15);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 148, -1, -1));
 
         jLabel3.setText("NAMA CUSTOMER");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(27, 185, 90, 15);
-        getContentPane().add(input_namacustomer);
-        input_namacustomer.setBounds(135, 183, 253, 19);
-        getContentPane().add(input_salamatcustomer);
-        input_salamatcustomer.setBounds(135, 220, 253, 19);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 185, -1, -1));
+        getContentPane().add(input_namacustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 183, 253, -1));
+        getContentPane().add(input_alamatcustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 220, 253, -1));
 
         jLabel4.setText("ALAMAT");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(27, 222, 44, 15);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 222, -1, -1));
 
         jLabel5.setText("NO. TELP");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(27, 259, 45, 15);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 259, -1, -1));
 
         input_telpcustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 input_telpcustomerActionPerformed(evt);
             }
         });
-        getContentPane().add(input_telpcustomer);
-        input_telpcustomer.setBounds(135, 257, 253, 19);
+        getContentPane().add(input_telpcustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 257, 253, -1));
 
-        jButton1.setText("TAMBAH");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        tambah.setText("TAMBAH");
+        tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                tambahActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(135, 317, 78, 25);
+        getContentPane().add(tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 317, -1, -1));
 
-        jButton2.setText("SIMPAN");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        simpan.setText("SIMPAN");
+        simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                simpanActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(224, 317, 72, 25);
+        getContentPane().add(simpan, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 317, -1, -1));
 
-        jButton3.setText("EDIT");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        edit.setText("EDIT");
+        edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                editActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(310, 317, 78, 25);
+        getContentPane().add(edit, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 317, 78, -1));
 
-        jButton6.setText("KEMBALI");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        kembali.setText("KEMBALI");
+        kembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                kembaliActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6);
-        jButton6.setBounds(310, 353, 78, 25);
+        getContentPane().add(kembali, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 353, -1, -1));
 
-        jButton5.setText("RESET");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        reset.setText("RESET");
+        reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                resetActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5);
-        jButton5.setBounds(224, 353, 72, 25);
+        getContentPane().add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 353, 72, -1));
 
-        jButton4.setText("HAPUS");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        hapus.setText("HAPUS");
+        hapus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                hapusActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(135, 353, 78, 25);
+        getContentPane().add(hapus, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 353, 78, -1));
 
         jLabel6.setIcon(new javax.swing.ImageIcon("D:\\store 50.jpg")); // NOI18N
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 0, 920, 550);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void tambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambahActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_tambahActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simpanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_simpanActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_editActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void kembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kembaliActionPerformed
         new home_view().setVisible(true);
         dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_kembaliActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_resetActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void hapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hapusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_hapusActionPerformed
 
     private void input_telpcustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_input_telpcustomerActionPerformed
         // TODO add your handling code here:
@@ -259,16 +241,12 @@ public class customer_view extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField input_idcustomer;
-    private javax.swing.JTextField input_namacustomer;
-    private javax.swing.JTextField input_salamatcustomer;
-    private javax.swing.JTextField input_telpcustomer;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    public javax.swing.JButton edit;
+    public javax.swing.JButton hapus;
+    public javax.swing.JTextField input_alamatcustomer;
+    public javax.swing.JTextField input_idcustomer;
+    public javax.swing.JTextField input_namacustomer;
+    public javax.swing.JTextField input_telpcustomer;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -277,7 +255,11 @@ public class customer_view extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable table_customer;
+    public javax.swing.JButton kembali;
+    public javax.swing.JButton reset;
+    public javax.swing.JButton simpan;
+    public javax.swing.JTable tabelCustomer;
+    public javax.swing.JButton tambah;
     private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 }

@@ -59,6 +59,17 @@ public class homeControl implements ActionListener{
             frm.dispose();
         }
         
+        else if (e.getSource() == frm.buttonCustomer) {
+            customer data_customer = new customer();
+            customer_view frm_customer = new customer_view();
+            customerControl ctrl_customer = new customerControl(data_customer, frm_customer);
+            
+            ctrl_customer.kosongkanForm();
+            ctrl_customer.TampilDataCustomer();
+            frm_customer.setVisible(true);
+            frm.dispose();
+        }
+        
     }
     
     
