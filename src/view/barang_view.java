@@ -176,7 +176,7 @@ public class barang_view extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tabelBarang);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 148, -1, 248));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(416, 148, 480, 248));
         getContentPane().add(input_harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 259, 253, -1));
 
         label_hargabarang.setText("HARGA");

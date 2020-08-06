@@ -55,7 +55,6 @@ public class home_view extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(920, 550));
-        setPreferredSize(new java.awt.Dimension(920, 550));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         welcome.setBackground(new java.awt.Color(255, 255, 255));

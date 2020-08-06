@@ -7,9 +7,8 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import model.barang;
-import view.barang_view;
-import view.home_view;
+import model.*;
+import view.*;
 
 
 
@@ -35,6 +34,17 @@ public class homeControl implements ActionListener{
             ctrl_barang.kosongkanForm();
             ctrl_barang.TampilDataBarang();
             frm_barang.setVisible(true);
+            frm.dispose();
+        }
+        
+        else if(e.getSource() == frm.buttonBeli){
+            beli data_beli = new beli();
+            beli_view frm_beli = new beli_view();
+            beliControl ctrl_beli = new beliControl(data_beli, frm_beli);
+            
+            ctrl_beli.kosongkanForm();
+            ctrl_beli.TampilDataBeli();
+            frm_beli.setVisible(true);
             frm.dispose();
         }
         
